@@ -23,6 +23,9 @@ function App() {
       <Router>
         <div>
           <Switch>
+          <Route path="/home">
+              <Home />
+            </Route>
             <Route path="/dashboard">
               <Dashboard />
             </Route>
