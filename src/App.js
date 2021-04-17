@@ -1,19 +1,18 @@
+import logo from './logo.svg';
 import './App.css';
-import React, { createContext, useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
-import Home from './components/Home/Home';
-import Admin from './components/Admin/Admin';
-import Login from './components/Login/Login';
-import PrivateRoute from './components/PrivateRoute/PrivateRoute';
-import NotFound from './components/NotFound/NotFound';
-import Deals from './components/Deals/Deals';
-import Orders from './components/Orders/Orders';
-import Navbar from './components/Navbar/Navbar';
+import Home from './components/Home/Home/Home';
+import Dashboard from './components/Dashboard/Dashboard/Dashboard';
+import Login from './components/Login/Login/Login';
+import { createContext, useState } from 'react';
+import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
+import AddService from './components/AddService/AddService';
+import AddReview from './components/AddReview/AddReview';
+import ManageService from './components/ManageService/ManageService';
 
 export const UserContext = createContext()
 
@@ -23,26 +22,24 @@ function App() {
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router>
         <div>
-          <Navbar/>
-          <hr />
           <Switch>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <PrivateRoute path="/orders/:productKey">
-              <Orders />
-            </PrivateRoute>
-            <PrivateRoute path="/admin">
-              <Admin />
-            </PrivateRoute>
-            <Route path="/deals">
-              <Deals />
+            <Route path="/dashboard">
+              <Dashboard />
             </Route>
             <Route path="/login">
               <Login />
             </Route>
-            <Route path="*">
-              <NotFound />
+            <Route path="/addService">
+              <AddService />
+            </Route>
+            <Route path="/addReview">
+              <AddReview />
+            </Route>
+            <Route path="/manageService">
+              <ManageService />
+            </Route>
+            <Route exact path="/">
+              <Home />
             </Route>
           </Switch>
         </div>
