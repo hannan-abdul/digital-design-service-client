@@ -1,5 +1,4 @@
 import React from 'react';
-import ManageService from '../../ManageService/ManageService';
 import FeaturedService from '../FeaturedService/FeaturedService';
 import Header from '../Header/Header';
 import OurWork from '../OurWork/OurWork';
@@ -11,7 +10,6 @@ const Home = () => {
         <div>
             <Header></Header>
             <OurWork></OurWork>
-            <ManageService></ManageService>
             <Services></Services>
             <FeaturedService></FeaturedService>
             <Testimonials></Testimonials>
