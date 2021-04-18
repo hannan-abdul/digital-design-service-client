@@ -17,23 +17,30 @@ const Login = () => {
 
     if (firebase.apps.length === 0) {
         firebase.initializeApp(firebaseConfig);
-      }
+    }
 
-      const handleGoogleSignIn = () => {
+    const handleGoogleSignIn = () => {
         var provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth()
             .signInWithPopup(provider)
             .then((result) => {
-                const {displayName, email} = result.user;
-                const signedInUser = {name: displayName, email}
-                setLoggedInUser(signedInUser)
-                history.replace(from);
+                const { displayName, email } = result.user;
+                const signedInUser = { name: displayName, email }
+                setLoggedInUser(signedInUser);
+                storeAuthToken();
+            }).catch(function (error) {
+                const errorMessage = error.message;
+                console.log(errorMessage);
+              });
+    }
 
-            }).catch((error) => {
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                var email = error.email;
-                var credential = error.credential;
+    const storeAuthToken = () => {
+        firebase.auth().currentUser.getIdToken(/* forceRefresh */ true)
+            .then(function (idToken) {
+                sessionStorage.setItem('token', idToken);
+                history.replace(from);
+            }).catch(function (error) {
+                // Handle error
             });
     }
 

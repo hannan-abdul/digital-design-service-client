@@ -13,7 +13,7 @@ const AddReview = () => {
             description: data.description,
             imageURL: imageURL
         };
-        const url = `http://localhost:5055/addReview`;
+        const url = `https://limitless-inlet-87809.herokuapp.com/addReview`;
         console.log(reviewData)
         fetch(url, {
             method: 'POST',

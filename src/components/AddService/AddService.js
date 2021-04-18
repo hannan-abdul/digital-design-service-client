@@ -13,7 +13,7 @@ const AddProducts = () => {
             description: data.description,
             imageURL: imageURL
         };
-        const url = `http://localhost:5055/addService`;
+        const url = `https://limitless-inlet-87809.herokuapp.com/addService`;
         console.log(productData)
         fetch(url, {
             method: 'POST',

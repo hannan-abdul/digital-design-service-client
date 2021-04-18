@@ -5,7 +5,7 @@ const DeleteService = (props) => {
 
     const deleteProduct = id => {
         console.log(id)
-        fetch(`http://localhost:5055/delete/${id}`, {
+        fetch(`https://limitless-inlet-87809.herokuapp.com/delete/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
