@@ -46,14 +46,14 @@ const AddProducts = () => {
             <SideBar></SideBar>
             <div className="col-md-10 p-4 pr-5" style={{ position: "absolute", right: "-5%", top: "10%", backgroundColor: "#F4FDFB" }}>
                 <h2>Add New Service</h2>
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    <input name="name" placeholder="Name" ref={register} />
+                <form style={{width:"50%"}} onSubmit={handleSubmit(onSubmit)}>
+                    <input class="form-control" name="name" placeholder="Name" ref={register} />
                     <br />
-                    <input name="price" placeholder="Price" ref={register} />
+                    <input class="form-control" name="price" placeholder="Price" ref={register} />
                     <br />
-                    <input name="description" placeholder="Description" ref={register} />
+                    <input class="form-control" name="description" placeholder="Description" ref={register} />
                     <br />
-                    <input name="Add Photo" type="file" onChange={handleImageUpload} />
+                    <input class="form-control" name="Add Photo" type="file" onChange={handleImageUpload} />
                     <br />
                     <input type="submit" />
                 </form>

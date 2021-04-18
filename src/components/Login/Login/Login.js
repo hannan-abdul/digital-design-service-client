@@ -39,7 +39,8 @@ const Login = () => {
 
     return (
         <div className="text-center">
-            <button className="inner-button-fix" onClick={handleGoogleSignIn}><FontAwesomeIcon icon={faGoogle} /> Google Sign In</button>
+            <h3>You Must Log In</h3>
+            <button className="inner-button-fix mt-5" onClick={handleGoogleSignIn}><FontAwesomeIcon icon={faGoogle} /> Google Sign In</button>
         </div>
     );
 };

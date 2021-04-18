@@ -21,7 +21,7 @@ const DeleteService = (props) => {
                     <h4>{name}</h4>
                 </div>
                 <div className="col-md-3">
-                    <h5>{price}</h5>
+                    <h5>${price}</h5>
                 </div>
                 <div className="col-md-3">
                     <button onClick={() => deleteProduct(_id)}>Delete</button>

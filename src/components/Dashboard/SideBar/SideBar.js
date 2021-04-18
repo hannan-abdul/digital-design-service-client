@@ -1,8 +1,9 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCog, faSignOutAlt, faCalendar, faGripHorizontal, faUsers, faUserPlus } from '@fortawesome/free-solid-svg-icons';
+import { faCog, faSignOutAlt, faCalendar, faGripHorizontal, faUsers, faUserPlus, faStar, faMoneyBillWave } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import './SideBar.css';
+import { faServicestack } from '@fortawesome/free-brands-svg-icons';
 
 const SideBar = () => {
     return (
@@ -14,28 +15,28 @@ const SideBar = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/orderList" className="text-white">
-                        <FontAwesomeIcon icon={faCalendar} /> <span>Order List</span>
-                    </Link>
-                </li>
-                <li>
                     <Link to="/addService" className="text-white">
-                        <span>Add Service</span>
+                        <FontAwesomeIcon icon={faServicestack} /><span>Add Service</span>
                     </Link>
                 </li>
                 <li>
                     <Link to="/manageService" className="text-white">
-                        <FontAwesomeIcon icon={faUsers} /> <span>Manage Service</span>
+                        <FontAwesomeIcon icon={faServicestack} /> <span>Manage Service</span>
                     </Link>
                 </li>
                 <li>
                     <Link to="/addReview" className="text-white" >
-                        <FontAwesomeIcon icon={faUserPlus} /> <span>Add Review</span>
+                        <FontAwesomeIcon icon={faStar} /> <span>Add Review</span>
                     </Link>
                 </li>
                 <li>
                     <Link to="/processPayment" className="text-white" >
-                        <FontAwesomeIcon icon={faCog} /> <span>Order</span>
+                        <FontAwesomeIcon icon={faMoneyBillWave} /> <span>Order</span>
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/orderList" className="text-white">
+                        <FontAwesomeIcon icon={faCalendar} /> <span>Order List</span>
                     </Link>
                 </li>
             </ul>

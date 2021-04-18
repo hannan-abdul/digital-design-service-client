@@ -45,14 +45,14 @@ const AddReview = () => {
             <SideBar></SideBar>
             <div className="col-md-10 p-4 pr-5" style={{ position: "absolute", right: "-5%", top: "10%", backgroundColor: "#F4FDFB" }}>
                 <h2>Add New Review</h2>
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    <input name="name" placeholder="Name" ref={register} />
+                <form style={{width:"50%"}} onSubmit={handleSubmit(onSubmit)}>
+                    <input class="form-control" name="name" placeholder="Name" ref={register} />
                     <br />
-                    <input name="city" placeholder="city" ref={register} />
+                    <input class="form-control" name="city" placeholder="city" ref={register} />
                     <br />
-                    <input name="description" placeholder="Description" ref={register} />
+                    <input class="form-control" name="description" placeholder="Description" ref={register} />
                     <br />
-                    <input name="Add Photo" type="file" onChange={handleImageUpload} />
+                    <input class="form-control" name="Add Photo" type="file" onChange={handleImageUpload} />
                     <br />
                     <input type="submit" />
                 </form>

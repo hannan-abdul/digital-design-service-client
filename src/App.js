@@ -27,9 +27,9 @@ function App() {
           <Route path="/home">
               <Home />
             </Route>
-            <Route path="/dashboard">
+            <PrivateRoute path="/dashboard">
               <Dashboard />
-            </Route>
+            </PrivateRoute>
             <Route path="/login">
               <Login />
             </Route>
@@ -42,9 +42,9 @@ function App() {
             <Route path="/manageService">
               <ManageService />
             </Route>
-            <Route path="/processPayment">
+            <PrivateRoute path="/processPayment">
               <ProcessPayment />
-            </Route>
+            </PrivateRoute>
             <Route exact path="/">
               <Home />
             </Route>
