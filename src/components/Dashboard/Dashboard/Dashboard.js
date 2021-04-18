@@ -1,6 +1,4 @@
 import React from 'react';
-import AddReview from '../../AddReview/AddReview';
-import AddService from '../../AddService/AddService';
 import ManageService from '../../ManageService/ManageService';
 import SideBar from '../SideBar/SideBar';
 

@@ -6,4 +6,11 @@
 }
 .banner-fix{
     padding: 0;
+    overflow: hidden;
+}
+.banner-fix .banner-img{
+    transition: all 1s linear;
+}
+.banner-fix:hover .banner-img{
+    transform: scale(1.1);
 }

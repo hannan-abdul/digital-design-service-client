@@ -34,8 +34,8 @@ const SideBar = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/doctor/setting" className="text-white" >
-                        <FontAwesomeIcon icon={faCog} /> <span>Setting</span>
+                    <Link to="/processPayment" className="text-white" >
+                        <FontAwesomeIcon icon={faCog} /> <span>Order</span>
                     </Link>
                 </li>
             </ul>

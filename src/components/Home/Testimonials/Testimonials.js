@@ -11,7 +11,7 @@ const Testimonials = () => {
     }, [])
 
     return (
-        <div className="container text-center mt-5 pt-5">
+        <div className="container text-center mt-5 pt-5 mb-5">
             <h1>FROM OUR CLIENTS</h1>
             <div className="row">
                 {

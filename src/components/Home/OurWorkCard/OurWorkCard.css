@@ -1,0 +1,9 @@
+.work-card{
+    overflow: hidden;
+}
+.work-card .work-img{
+    transition: all 1s linear;
+}
+.work-card:hover .work-img{
+    transform: scale(1.1);
+}
