@@ -5,7 +5,7 @@ const DeleteReviews = ({ service }) => {
 
     const deleteReview = id => {
         console.log(id)
-        fetch(`http://localhost:5055/deletereview/${id}`, {
+        fetch(`https://peaceful-spire-94243.herokuapp.com/deletereview/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

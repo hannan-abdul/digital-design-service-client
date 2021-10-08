@@ -5,7 +5,7 @@ import DeleteReviews from './DeleteReviews';
 const ManageReviews = () => {
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
-        fetch('https://limitless-inlet-87809.herokuapp.com/reviews')
+        fetch('https://peaceful-spire-94243.herokuapp.com/reviews')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [])

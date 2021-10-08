@@ -13,7 +13,7 @@ const AddProducts = () => {
             description: data.description,
             imageURL: imageURL
         };
-        const url = `https://limitless-inlet-87809.herokuapp.com/addService`;
+        const url = `https://peaceful-spire-94243.herokuapp.com/addService`;
         console.log(productData)
         fetch(url, {
             method: 'POST',

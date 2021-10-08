@@ -5,7 +5,7 @@ import DeleteService from './DeleteService';
 const ManageService = () => {
     const [services, setServices] = useState([]);
     useEffect(() => {
-        fetch('https://limitless-inlet-87809.herokuapp.com/services')
+        fetch('https://peaceful-spire-94243.herokuapp.com/services')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])
