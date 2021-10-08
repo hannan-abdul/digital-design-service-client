@@ -12,12 +12,15 @@ const ManageService = () => {
 
     return (
         <section>
-            <SideBar></SideBar>
+            <SideBar/>
             <div className="container text-center mt-5 col-md-10 p-4 pr-5" style={{ position: "absolute", right: "-5%", top: "10%", backgroundColor: "#F4FDFB" }}>
                 <h3>Manage Services</h3>
                 <div>
                     {
-                        services.map(service => <DeleteService service={service}></DeleteService>)
+                        services.map(service => <DeleteService 
+                            service={service} 
+                            key={service._id}
+                            />)
                     }
                 </div>
             </div>

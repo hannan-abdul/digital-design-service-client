@@ -1,4 +1,5 @@
 import React from 'react';
+import ManageReviews from '../../ManageReviews/ManageReviews';
 import ManageService from '../../ManageService/ManageService';
 import SideBar from '../SideBar/SideBar';
 
@@ -7,8 +8,8 @@ const Dashboard = () => {
         <section>
             <div className="row">
                 <div>
-                    <SideBar></SideBar>
-                    <ManageService></ManageService>
+                    <SideBar/>
+                    <ManageService/>
                 </div>
             </div>
         </section>

@@ -25,6 +25,11 @@ const SideBar = () => {
                     </Link>
                 </li>
                 <li>
+                    <Link to="/managereviews" className="text-white">
+                        <FontAwesomeIcon icon={faServicestack} /> <span>Manage Reviews</span>
+                    </Link>
+                </li>
+                <li>
                     <Link to="/addReview" className="text-white" >
                         <FontAwesomeIcon icon={faStar} /> <span>Add Review</span>
                     </Link>

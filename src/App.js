@@ -14,6 +14,7 @@ import AddService from './components/AddService/AddService';
 import AddReview from './components/AddReview/AddReview';
 import ManageService from './components/ManageService/ManageService';
 import ProcessPayment from './components/ProcessPayment/ProcessPayment';
+import ManageReviews from './components/ManageReviews/ManageReviews';
 
 export const UserContext = createContext()
 
@@ -27,9 +28,9 @@ function App() {
           <Route path="/home">
               <Home />
             </Route>
-            <PrivateRoute path="/dashboard">
+            <Route path="/dashboard">
               <Dashboard />
-            </PrivateRoute>
+            </Route>
             <Route path="/login">
               <Login />
             </Route>
@@ -41,6 +42,9 @@ function App() {
             </Route>
             <Route path="/manageService">
               <ManageService />
+            </Route>
+            <Route path="/managereviews">
+              <ManageReviews />
             </Route>
             <PrivateRoute path="/processPayment">
               <ProcessPayment />
