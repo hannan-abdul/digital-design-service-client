@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from './firebase.config';
@@ -6,32 +6,37 @@ import { useHistory, useLocation } from 'react-router';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import './Login.css';
-import { UserContext } from '../../../App';
+import { useSelector, useDispatch } from 'react-redux';
+import { googleSignUpAction } from '../../../redux/action/authAction';
 
+if (firebase.apps.length === 0) {
+    firebase.initializeApp(firebaseConfig);
+}
 
 const Login = () => {
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const dispatch = useDispatch();
     const history = useHistory();
     const location = useLocation();
     const { from } = location.state || { from: { pathname: "/" } };
-
-    if (firebase.apps.length === 0) {
-        firebase.initializeApp(firebaseConfig);
-    }
 
     const handleGoogleSignIn = () => {
         var provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth()
             .signInWithPopup(provider)
             .then((result) => {
-                const { displayName, email } = result.user;
-                const signedInUser = { name: displayName, email }
-                setLoggedInUser(signedInUser);
+                const credential = result.credential;
+                const token = credential.accessToken;
+                // The signed-in user info.
+                const user = result.user;
+                // console.log(user)
+                // const { email } = result.user;
+                // const singInUser = { email };
+                dispatch(googleSignUpAction(user));
                 storeAuthToken();
             }).catch(function (error) {
                 const errorMessage = error.message;
                 console.log(errorMessage);
-              });
+            });
     }
 
     const storeAuthToken = () => {

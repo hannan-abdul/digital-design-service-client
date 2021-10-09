@@ -7,7 +7,6 @@ import {
 import Home from './components/Home/Home/Home';
 import Dashboard from './components/Dashboard/Dashboard/Dashboard';
 import Login from './components/Login/Login/Login';
-import { createContext, useState } from 'react';
 import PrivateRoute from './components/Login/PrivateRoute/PrivateRoute';
 import AddService from './components/AddService/AddService';
 import AddReview from './components/AddReview/AddReview';
@@ -15,16 +14,12 @@ import ManageService from './components/ManageService/ManageService';
 import ProcessPayment from './components/ProcessPayment/ProcessPayment';
 import ManageReviews from './components/ManageReviews/ManageReviews';
 
-export const UserContext = createContext()
-
 function App() {
-  const [loggedInUser, setLoggedInUser] = useState({});
   return (
-    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router>
         <div>
           <Switch>
-          <Route path="/home">
+            <Route path="/home">
               <Home />
             </Route>
             <PrivateRoute path="/dashboard">
@@ -54,7 +49,6 @@ function App() {
           </Switch>
         </div>
       </Router>
-    </UserContext.Provider>
   );
 }
 
