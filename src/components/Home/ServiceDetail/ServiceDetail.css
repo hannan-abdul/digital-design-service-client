@@ -13,6 +13,3 @@
     transform: scale(1.1);
     background: #FCD21D;
 }
-.card-fix:hover h3{
-    text-decoration: none;
-}

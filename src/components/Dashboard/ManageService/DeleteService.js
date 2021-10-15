@@ -1,27 +1,53 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import "./Manageservice.css"
+import { serviceAction } from '../../../redux/action/customServiceAction';
+import { Link } from 'react-router-dom';
+import ModalForm from './ModalForm';
+import swal from 'sweetalert';
+import axios from 'axios';
 
-const DeleteService = (props) => {
-    const { name, price, _id } = props.service;
-
-    const deleteProduct = id => {
-        console.log(id)
-        fetch(`https://peaceful-spire-94243.herokuapp.com/delete/${id}`, {
-            method: 'DELETE'
-        })
-            .then(res => res.json())
-            .then(result => {
-                console.log('product deleted')
-            })
+const DeleteService = ({ service }) => {
+    const [modalIsOpen, setIsOpen] = useState(false);
+    const email = useSelector((state) => state.auth.userdetails.email);
+    // modal function 
+    function openModal() {
+        setIsOpen(true);
     }
+    function closeModal() {
+        setIsOpen(false);
+    }
+    const { name, price, _id } = service;
+    // const dispatch = useDispatch();
 
-    const updateProduct = id => {
+    // const deleteProduct = id => {
+    //     console.log(id)
+    //     fetch(`https://peaceful-spire-94243.herokuapp.com/delete/${id}`, {
+    //         method: 'DELETE'
+    //     })
+    //         .then(res => res.json())
+    //         .then(result => {
+    //             console.log('product deleted')
+    //         })
+    // }
 
+    const deleteService = async () => {
+        try{
+            await axios.delete(`http://localhost:5050/api/services/${_id}`,{
+                data: {email: email}
+            });
+            swal("Successfully Deleted", "Your service has been successfully Deleted!", "success");
+            window.location.replace("/manage-services");
+        }
+        catch(err){
+            swal("Failed!", "You can delete only your added Service!", "error", { dangerMode: true });
+            console.log(err);
+        }
     }
 
     return (
         <div>
-            <div className="row">
+            <div className="row row-fix justify-content-center align-items-center">
                 <div className="col-md-3">
                     <h4>{name}</h4>
                 </div>
@@ -29,97 +55,13 @@ const DeleteService = (props) => {
                     <h5>${price}</h5>
                 </div>
                 <div className="col-md-3">
-                    <button onClick={() => deleteProduct(_id)}>Delete</button>
-                    <button className="button-fix" onClick={() => updateProduct(_id)}>Update</button>
+                    <button className="button-fix" onClick={() => deleteService(_id)}>Delete</button>
+                    <button className="button-fix" onClick={openModal} className="button-fix">Edit</button>
                 </div>
+                <ModalForm modalIsOpen={modalIsOpen} closeModal={closeModal} service={service} />
             </div>
         </div>
     );
 };
 
 export default DeleteService;
-
-// const MongoClient = require('mongodb').MongoClient;
-// const ObjectID = require('mongodb').ObjectID;
-// DB_USER=digitalService
-// DB_PASS=1234zxcv
-// DB_NAME=homeRenovation
-
-// const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.4ko6w.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`;
-// const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-// client.connect(err => {
-//   const serviceCollection = client.db("homeRenovation").collection("renovationService");
-//   const reviewsCollection = client.db("homeRenovation").collection("reviews");
-  
-//   //read reviews
-//   app.get('/reviews', (req, res) => {
-//     reviewsCollection.find({})
-//       .toArray((err, items) => {
-//         res.send(items)
-//       })
-//   })
-// //post reviews
-//   app.post('/addReview', (req, res) => {
-//     const newReview = req.body;
-//     console.log('adding new product', newReview)
-//     reviewsCollection.insertOne(newReview)
-//       .then(result => {
-//         console.log('inserted count', result.insertedCount)
-//         res.send(result.insertedCount > 0)
-//       })
-//   })
-
-//   // delete reviews
-//   app.delete('/deletereview/:id', (req, res) => {
-//     console.log(req.params.id);
-//     reviewsCollection.deleteOne({_id: ObjectID(req.params.id) })
-//       .then(result => {
-//         res.send(result.deletedCount > 0);
-//       })
-//   })
-
-//   // read services 
-//   app.get('/services', (req, res) => {
-//     serviceCollection.find({})
-//       .toArray((err, items) => {
-//         res.send(items)
-//       })
-//   })
-// // post services
-//   app.post('/addService', (req, res) => {
-//     const newService = req.body;
-//     console.log('adding new product', newService)
-//     serviceCollection.insertOne(newService)
-//       .then(result => {
-//         console.log('inserted count', result.insertedCount)
-//         res.send(result.insertedCount > 0)
-//       })
-//   })
-  
-// // delete service
-//   app.delete('/delete/:id', (req, res) => {
-//     console.log(req.params.id);
-//     serviceCollection.deleteOne({_id: ObjectID(req.params.id) })
-//       .then(result => {
-//         res.send(result.deletedCount > 0);
-//       })
-//   })
-
-//   //update service
-//   app.put('/update/:id', (req, res) => {
-//     const updatedItem = {
-//         name: req.body.name,
-//         city: req.body.city,
-//         description: req.body.description,
-//         imageURL: req.body.imageURL,
-//     };
-//     console.log(req.body);
-//     serviceCollection.updateOne({ _id: ObjectId(req.params.id) },
-//         { $set: updatedItem })
-//         .then(result => {
-//             res.send(result.modifiedCount > 0)
-//         })
-//   })
-
-//   console.log('database connected')
-// });

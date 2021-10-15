@@ -55,7 +55,12 @@ const Testimonials = () => {
                     "clickable": true
                 }} className="mySwiper">
                 {
-                    testimonials.map(testimonial => 
+                    testimonials.length === 0 && <div className="spinner-border text-primary" role="status">
+                        <span class="visually-hidden"></span>
+                    </div>
+                }
+                {
+                    testimonials.map(testimonial =>
                         <SwiperSlide key={testimonial._id}>
                             <div className="group w-90 mt-10 mb-16 testimonial-card cursor-pointer bg-white dark:bg-gray-800 shadow-lg mx-auto rounded-xl p-4">
                                 <img className="mt-5" src={testimonial.photo} alt="img" />

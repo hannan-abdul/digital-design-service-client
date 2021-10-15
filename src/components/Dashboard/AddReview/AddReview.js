@@ -7,7 +7,7 @@ import SideBar from '../SideBar/SideBar';
 import swal from 'sweetalert';
 
 const AddReview = () => {
-    const { register, handleSubmit, watch, errors } = useForm();
+    const { register, handleSubmit } = useForm();
     const history = useHistory();
     const [photo, setPhoto] = useState(null);
     const [error, setError] = useState(false);
@@ -15,11 +15,9 @@ const AddReview = () => {
 
     //review add
     const onSubmit = async data => {
-        if(email === "test@admin.com"){
-            return swal("Permission restriction!", "As a test-admin, you don't have this permission.", "info");;
-        }
         const reviewData = {
             name: data.name,
+            email: email,
             city: data.city,
             description: data.description,
             photo: photo
@@ -32,6 +30,7 @@ const AddReview = () => {
                 data: reviewData
             });
             console.log('server side response', res)
+            swal("Successfully Added", "Your review has been successfully added!", "success");
             res && history.push("/manage-reviews")
         }
         catch (err) {

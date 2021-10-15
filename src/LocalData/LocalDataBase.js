@@ -47,5 +47,5 @@ export const dashboard_nav =[
         pathname: "Order List",
         size: 'text-2xl',
         role: ['admin']
-    },
+    }
 ]

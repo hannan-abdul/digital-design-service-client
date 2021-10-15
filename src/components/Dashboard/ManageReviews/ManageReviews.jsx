@@ -17,7 +17,7 @@ const ManageReviews = () => {
                 <div>
                     <div>
                         {
-                            reviews.map(service => <DeleteReviews service={service} key={service._id}/>)
+                            reviews.map(review => <DeleteReviews review={review} key={review._id}/>)
                         }
                     </div>
                 </div>

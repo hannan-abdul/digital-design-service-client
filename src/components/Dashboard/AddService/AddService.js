@@ -1,10 +1,13 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
+import { useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
+import swal from 'sweetalert';
 import SideBar from '../SideBar/SideBar';
 
 const AddProducts = () => {
+    const email = useSelector((state) => state.auth.userdetails.email);
     const { register, handleSubmit, watch, errors } = useForm();
     const history = useHistory();
     const [photo, setPhoto] = useState(null);
@@ -13,6 +16,7 @@ const AddProducts = () => {
     const onSubmit = async data => {
         const serviceData = {
             name: data.name,
+            email: email,
             price: data.price,
             description: data.description,
             photo: photo
@@ -25,7 +29,8 @@ const AddProducts = () => {
                 data: serviceData
             });
             console.log('server side response', res)
-            res && history.push("/manageService")
+            swal("Successfully Added", "Your service has been successfully added!", "success");
+            res && history.push("/manage-services")
         }
         catch (err) {
             setError(true);
