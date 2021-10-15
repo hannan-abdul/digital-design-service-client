@@ -1,5 +1,6 @@
 import React from 'react';
 import Footer from '../../Footer/Footer';
+import ContactUs from '../ContactUs/ContactUs';
 import FeaturedService from '../FeaturedService/FeaturedService';
 import Header from '../Header/Header';
 import OurWork from '../OurWork/OurWork';
@@ -9,12 +10,13 @@ import Testimonials from '../Testimonials/Testimonials';
 const Home = () => {
     return (
         <div>
-            <Header></Header>
-            <OurWork></OurWork>
+            <Header/>
+            <OurWork/>
             <Services></Services>
-            <FeaturedService></FeaturedService>
-            <Testimonials></Testimonials>
-            <Footer></Footer>
+            <FeaturedService/>
+            <Testimonials/>
+            <ContactUs/>
+            <Footer/>
         </div>
     );
 };

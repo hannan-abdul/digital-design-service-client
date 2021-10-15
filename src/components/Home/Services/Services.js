@@ -5,16 +5,24 @@ const Services = () => {
     const [services, setServices] = useState([]);
 
     useEffect(() => {
-        fetch('https://peaceful-spire-94243.herokuapp.com/services')
+        fetch('http://localhost:5050/api/services/allservices')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])
     return (
         <div className="container text-center mt-5" id="service">
             <h1>SERVICE WE PROVIDE</h1>
-            <div className="row">
+            <div className="row text-center justify-content-center">
                 {
-                    services.map(service => <ServiceDetail service={service}></ServiceDetail>)
+                    services.length === 0 && <div className="spinner-border text-primary" role="status">
+                        <span class="visually-hidden"></span>
+                    </div>
+                }
+                {
+                    services.map(service => <ServiceDetail
+                        key={service._id}
+                        service={service}
+                    />)
                 }
             </div>
         </div>

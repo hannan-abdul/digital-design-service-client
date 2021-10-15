@@ -28,7 +28,7 @@ const OurWork = () => {
             <div className="w-75 row text-center mt-5 pt-5">
                 <h1>OUR PORTFOLIO</h1>
                 {
-                    portfolio.map(detail => <OurWorkCard detail={detail}></OurWorkCard>)
+                    portfolio.map(detail => <OurWorkCard detail={detail}/>)
                 }
             </div>
         </div>

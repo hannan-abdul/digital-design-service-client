@@ -3,6 +3,7 @@ import React from 'react';
 const DeleteReviews = ({ service }) => {
     const { name, _id } = service;
 
+    //delete review
     const deleteReview = id => {
         console.log(id)
         fetch(`https://peaceful-spire-94243.herokuapp.com/deletereview/${id}`, {
@@ -13,8 +14,8 @@ const DeleteReviews = ({ service }) => {
                 console.log('review deleted')
             })
     }
-
-    const updateReview = id =>{
+    // update review
+    const updateReview = id => {
 
     }
 

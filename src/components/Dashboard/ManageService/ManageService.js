@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import SideBar from '../Dashboard/SideBar/SideBar';
+import SideBar from '../SideBar/SideBar';
 import DeleteService from './DeleteService';
 
 const ManageService = () => {
     const [services, setServices] = useState([]);
     useEffect(() => {
-        fetch('https://peaceful-spire-94243.herokuapp.com/services')
+        fetch('http://localhost:5050/api/services/allservices')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])

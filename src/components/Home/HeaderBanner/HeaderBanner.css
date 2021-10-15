@@ -5,8 +5,9 @@
     background-color: #FCD21D;
 }
 .banner-fix{
-    padding: 0;
+    padding: 0 !important;
     overflow: hidden;
+
 }
 .banner-fix .banner-img{
     transition: all 1s linear;

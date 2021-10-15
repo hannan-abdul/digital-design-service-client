@@ -1,3 +1,6 @@
 .div-fix{
     margin: 40px 0;
 }
+.div-fix img{
+    width: 50%;
+}

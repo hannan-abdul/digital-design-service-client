@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import SideBar from '../Dashboard/SideBar/SideBar';
+import SideBar from '../SideBar/SideBar';
 import DeleteReviews from './DeleteReviews';
 
 const ManageReviews = () => {
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
-        fetch('https://peaceful-spire-94243.herokuapp.com/reviews')
+        fetch('http://localhost:5050/api/reviews/allreviews')
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [])

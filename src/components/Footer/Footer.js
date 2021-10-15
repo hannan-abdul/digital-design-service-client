@@ -3,6 +3,7 @@ import './Footer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faInstagram, faGooglePlusG } from '@fortawesome/free-brands-svg-icons';
 import FooterColum from './FooterColum';
+import ScrollTop from '../Helper/ScrollTop';
 
 const Footer = () => {
     const ourAddress = [
@@ -48,6 +49,7 @@ const Footer = () => {
                     <p>Copyright {(new Date()).getFullYear()} All Rights Reserved</p>
                 </div>
             </div>
+            <ScrollTop/>
         </footer>
         
     );

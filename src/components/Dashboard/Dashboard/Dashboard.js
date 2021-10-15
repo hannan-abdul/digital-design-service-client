@@ -1,7 +1,7 @@
 import React from 'react';
-import ManageReviews from '../../ManageReviews/ManageReviews';
-import ManageService from '../../ManageService/ManageService';
+import ManageService from '../../Dashboard/ManageService/ManageService';
 import SideBar from '../SideBar/SideBar';
+
 
 const Dashboard = () => {
     return (

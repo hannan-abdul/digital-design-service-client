@@ -15,7 +15,7 @@ const Testimonials = () => {
 
     const [testimonials, setTestimonials] = useState([]);
     useEffect(() => {
-        fetch('https://peaceful-spire-94243.herokuapp.com/reviews')
+        fetch('http://localhost:5050/api/reviews/allreviews')
             .then(res => res.json())
             .then(data => setTestimonials(data))
     }, [])
@@ -55,10 +55,10 @@ const Testimonials = () => {
                     "clickable": true
                 }} className="mySwiper">
                 {
-                    testimonials.map(testimonial =>
-                        <SwiperSlide>
+                    testimonials.map(testimonial => 
+                        <SwiperSlide key={testimonial._id}>
                             <div className="group w-90 mt-10 mb-16 testimonial-card cursor-pointer bg-white dark:bg-gray-800 shadow-lg mx-auto rounded-xl p-4">
-                                <img className="mt-5" src={testimonial.imageURL} alt="img" />
+                                <img className="mt-5" src={testimonial.photo} alt="img" />
                                 <p>{testimonial.description}</p>
                                 <h3>{testimonial.name}</h3>
                                 <h6>{testimonial.city}</h6>

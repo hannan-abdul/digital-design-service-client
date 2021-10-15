@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
+import { useSelector } from 'react-redux';
 
 const SimpleCardForm = () => {
+    const service = useSelector((state)=> state.services.servicedetails);
+    const { name, price, } = service;
     const stripe = useStripe();
     const elements = useElements();
     const [paymentError, setPaymentError] = useState(null);
