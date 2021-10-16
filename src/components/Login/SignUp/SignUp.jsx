@@ -22,7 +22,7 @@ const SignUp = () => {
         try {
             const res = await axios({
                 method: 'post',
-                url: 'http://localhost:5050/api/auth/register',
+                url: 'https://peaceful-spire-94243.herokuapp.com/api/auth/register',
                 data: userData
             });
             console.log('server side response', res)

@@ -26,7 +26,7 @@ const AddReview = () => {
         try {
             const res = await axios({
                 method: 'post',
-                url: `http://localhost:5050/api/reviews/addreview`,
+                url: `https://peaceful-spire-94243.herokuapp.com/api/reviews/addreview`,
                 data: reviewData
             });
             console.log('server side response', res)

@@ -25,7 +25,7 @@ const AddProducts = () => {
         try {
             const res = await axios({
                 method: 'post',
-                url: `http://localhost:5050/api/services/addservice`,
+                url: `https://peaceful-spire-94243.herokuapp.com/api/services/addservice`,
                 data: serviceData
             });
             console.log('server side response', res)

@@ -38,7 +38,7 @@ const UpdateModal = ({ modalIsOpen, closeModal, review }) => {
         try {
             const res = await axios({
                 method: 'put',
-                url: `http://localhost:5050/api/reviews/${_id}`,
+                url: `https://peaceful-spire-94243.herokuapp.com/api/reviews/${_id}`,
                 data: reviewUpdateData
             });
             console.log('server side response', res)

@@ -38,7 +38,7 @@ const ModalForm = ({ modalIsOpen, closeModal, service }) => {
         try {
             const res = await axios({
                 method: 'put',
-                url: `http://localhost:5050/api/services/${_id}`,
+                url: `https://peaceful-spire-94243.herokuapp.com/api/services/${_id}`,
                 data: serviceUpdateData
             });
             console.log('server side response', res)

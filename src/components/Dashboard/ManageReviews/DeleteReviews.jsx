@@ -18,7 +18,7 @@ const DeleteReviews = ({ review }) => {
     //delete review
     const deleteReview = async () => {
         try{
-            await axios.delete(`http://localhost:5050/api/reviews/${_id}`,{
+            await axios.delete(`https://peaceful-spire-94243.herokuapp.com/api/reviews/${_id}`,{
                 data: {email: email}
             });
             swal("Successfully Deleted", "Your review has been successfully Deleted!", "success");

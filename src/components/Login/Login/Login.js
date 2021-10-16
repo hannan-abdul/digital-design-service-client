@@ -36,7 +36,7 @@ const Login = () => {
         try {
             const res = await axios({
                 method: 'post',
-                url: 'http://localhost:5050/api/auth/login',
+                url: 'https://peaceful-spire-94243.herokuapp.com/api/auth/login',
                 data: userData
             });
             console.log(res);

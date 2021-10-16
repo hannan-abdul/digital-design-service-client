@@ -18,22 +18,10 @@ const DeleteService = ({ service }) => {
         setIsOpen(false);
     }
     const { name, price, _id } = service;
-    // const dispatch = useDispatch();
-
-    // const deleteProduct = id => {
-    //     console.log(id)
-    //     fetch(`https://peaceful-spire-94243.herokuapp.com/delete/${id}`, {
-    //         method: 'DELETE'
-    //     })
-    //         .then(res => res.json())
-    //         .then(result => {
-    //             console.log('product deleted')
-    //         })
-    // }
 
     const deleteService = async () => {
         try{
-            await axios.delete(`http://localhost:5050/api/services/${_id}`,{
+            await axios.delete(`https://peaceful-spire-94243.herokuapp.com/api/services/${_id}`,{
                 data: {email: email}
             });
             swal("Successfully Deleted", "Your service has been successfully Deleted!", "success");
