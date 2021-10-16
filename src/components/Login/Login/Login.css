@@ -1,7 +1,11 @@
 .inner-button-fix{
     padding: 10px;
     border: 0;
-    border-radius: 10px;
+    border-radius: 10px; 
     box-shadow: 5px 5px 5px slategrey;
-    width: 20%;
+}
+.form-fix{
+    border: 1px solid gray;
+    width: 80%;
+    margin: auto;
 }
