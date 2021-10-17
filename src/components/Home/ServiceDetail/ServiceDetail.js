@@ -11,12 +11,13 @@ const ServiceDetail = ({ service }) => {
     return (
         <div className="col-md-4 mt-5">
             <div className="card-fix">
-                <Link to="/process-payment" onClick={() => dispatch(serviceAction(service))}>
                     <img style={{ width: '100px' }} src={photo} alt="img" />
                     <h3 style={{ color: 'black', }}>${price}</h3>
                     <h4>{name}</h4>
                     <p style={{ color: 'black' }}>{description}</p>
-                </Link>
+                    <div>
+                        <Link to="/process-payment" onClick={() => dispatch(serviceAction(service))}><button className="btn-primary">Buy</button></Link>
+                    </div>
             </div>
         </div>
     );

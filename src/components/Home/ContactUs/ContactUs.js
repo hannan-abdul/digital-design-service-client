@@ -9,12 +9,10 @@ import './Contact.css';
 
 const ContactUs = () => {
     const { register, handleSubmit, reset } = useForm();
-    // const [name, setName] =useState('')
-    // const [email, setEmail] =useState('')
-    // const [message, setMessage] =useState('')
+
     const onSubmit = data => {
         const loading = toast.loading('Please wait...!');
-        emailjs.send('gmail', 'gerez_template', data, 'user_UhuudhC7XpS5QUo7xDWsT')
+        emailjs.send('service_agp6dw7', 'template_uno57cd', data, 'user_fHGK628WRJqiLDVimt8op')
             .then((res) => {
                 toast.dismiss(loading);
                 if (res.text === "OK") {
@@ -28,9 +26,6 @@ const ContactUs = () => {
             });
     };
 
-    // const handleSubmit=()=>{
-
-    // }
     return (
         <section id="contact" className="contact-section">
             <Fade bottom duration={2500} distance="40px">
@@ -42,26 +37,22 @@ const ContactUs = () => {
                         <Row className="input-container">
                             <Col xs={12}>
                                 <div className="styled-input wide">
-                                    <input type="text" {...register("name", { required: true })} required />
-                                    <label>Name</label>
+                                    <input placeholder="name" type="text" {...register("name", { required: true })} required />
                                 </div>
                             </Col>
                             <Col md={6} sm={12}>
                                 <div className="styled-input">
-                                    <input type="text" {...register("email", { required: true })} required />
-                                    <label>Email</label>
+                                    <input placeholder="Email" type="text" {...register("email", { required: true })} required />
                                 </div>
                             </Col>
                             <Col md={6} sm={12}>
                                 <div className="styled-input" style={{ float: "right" }}>
-                                    <input type="text" {...register("phone", { required: true })} required />
-                                    <label>Phone Number</label>
+                                    <input placeholder="Phone" type="text" {...register("phone", { required: true })} required />
                                 </div>
                             </Col>
                             <Col xs={12}>
                                 <div className="styled-input wide">
-                                    <textarea {...register("message", { required: true })} required />
-                                    <label>Message</label>
+                                    <textarea placeholder="Message" {...register("message", { required: true })} required />
                                 </div>
                             </Col>
                             <Col xs={12}>

@@ -13,3 +13,13 @@
     transform: scale(1.1);
     background: #FCD21D;
 }
+
+.card-fix div{
+    display: none;
+}
+.card-fix div button{
+    border-radius: 5px;
+}
+.card-fix:hover div{
+    display: block;
+}
