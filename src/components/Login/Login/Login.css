@@ -3,6 +3,7 @@
     border: 0;
     border-radius: 10px; 
     box-shadow: 5px 5px 5px slategrey;
+    width: 30%;
 }
 .form-fix{
     border: 1px solid gray;
