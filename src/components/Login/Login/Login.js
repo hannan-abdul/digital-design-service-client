@@ -43,7 +43,7 @@ const Login = () => {
             dispatch(customAuthAction(res.data.others));
             if (res) {
                 // history.replace(from);
-                history.replace("/dashboard")
+                history.replace("/manage-services")
             }
         } catch (err) {
             setError(true);
@@ -89,7 +89,7 @@ const Login = () => {
             .then(function (idToken) {
                 sessionStorage.setItem('token', idToken);
                 // history.replace(from);
-                history.replace("/dashboard")
+                history.replace("/manage-services")
             }).catch(function (error) {
                 // Handle error
             });

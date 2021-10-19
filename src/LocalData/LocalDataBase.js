@@ -1,8 +1,8 @@
 export const dashboard_nav =[
     {
         id: 1,
-        path: "/dashboard",
-        pathname: "Dashboard",
+        path: "/",
+        pathname: "Home",
         size: 'text-2xl',
         role: ['admin','user']
     },

@@ -57,7 +57,7 @@ const AddProducts = () => {
     }
     return (
         <section>
-            <SideBar></SideBar>
+            <SideBar/>
             <div className="col-md-10 p-4 pr-5" style={{ position: "absolute", right: "-5%", top: "10%", backgroundColor: "#F4FDFB" }}>
                 <h2>Add New Service</h2>
                 <form style={{ width: "50%" }} onSubmit={handleSubmit(onSubmit)}>
